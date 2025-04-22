@@ -76,7 +76,7 @@ dependencies:
 - pylibcudf=25.02
 - pylint=3.0.3
 - pynvml=12
-- pypdfium2==4.30
+- pypdfium2==4.30.*
 - pytest-asyncio
 - pytest-benchmark=4.0
 - pytest-cov

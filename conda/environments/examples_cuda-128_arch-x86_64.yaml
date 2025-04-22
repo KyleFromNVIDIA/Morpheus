@@ -46,7 +46,7 @@ dependencies:
 - pydantic
 - pynvml=11.4
 - pypdf=3.17.4
-- pypdfium2==4.30
+- pypdfium2==4.30.*
 - python-confluent-kafka=2.6.1
 - python-docx==1.1.0
 - python-graphviz
