@@ -436,8 +436,8 @@ dependencies:
           - pip
           - pip:
             - &torch-extra-index --extra-index-url https://download.pytorch.org/whl/cu124
-            - databricks-cli < 0.100
-            - databricks-connect
+            # - databricks-cli < 0.100 # removing for license incompatibility with PB
+            # - databricks-connect # removing for license incompatibility with PB
       - output_types: [requirements]
         packages:
           # - --extra-index-url https://download.pytorch.org/whl/cu124
@@ -483,8 +483,8 @@ dependencies:
           - typing_utils==0.1
           - watchdog==3.0
           - websockets
-          - databricks-cli<0.100
-          - databricks-connect
+          # - databricks-cli<0.100 # removing for license incompatiblity with PB
+          # - databricks-connect # removing for license incompatiblity with PB
           # - milvus==2.3.5 # update to match pymilvus when available
           # - pymilvus==2.4.3
           # - torch==2.4.0+cu124
