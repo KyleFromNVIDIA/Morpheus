@@ -15,6 +15,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# Morpheus 25.02.02 (29 Aug 2025)
+
+## 🛠️ Improvements
+
+- Forward-merge branch-24.10 into branch-25.02 ([#2302](https://github.com/nv-morpheus/Morpheus/pull/2302))
+
 # Morpheus 25.02.01 (28 Feb 2025)
 
 ## 🐛 Bug Fixes
