@@ -15,6 +15,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# Morpheus 24.06.02 (29 Aug 2025)
+
+## 🛠️ Improvements
+- Update dependencies for Morpheus 24.06 container ([#2217](https://github.com/nv-morpheus/Morpheus/pull/2217)) [@yczhang-nv](https://github.com/yczhang-nv)
+
 # Morpheus 24.06.01 (23 Aug 2024)
 
 ## 🛠️ Improvements
