@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: Copyright (c) 2022-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-FileCopyrightText: Copyright (c) 2022-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 SPDX-License-Identifier: Apache-2.0
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -160,6 +160,11 @@ limitations under the License.
 - Install built documentation into release container ([#1806](https://github.com/nv-morpheus/Morpheus/pull/1806)) [@dagardner-nv](https://github.com/dagardner-nv)
 - Removing support for `MultiMessage` from stages ([#1803](https://github.com/nv-morpheus/Morpheus/pull/1803)) [@yczhang-nv](https://github.com/yczhang-nv)
 - Batch incoming DOCA raw packet data ([#1731](https://github.com/nv-morpheus/Morpheus/pull/1731)) [@dagardner-nv](https://github.com/dagardner-nv)
+
+# Morpheus 24.06.02 (29 Aug 2025)
+
+## 🛠️ Improvements
+- Update dependencies for Morpheus 24.06 container ([#2217](https://github.com/nv-morpheus/Morpheus/pull/2217)) [@yczhang-nv](https://github.com/yczhang-nv)
 
 # Morpheus 24.06.01 (23 Aug 2024)
 
