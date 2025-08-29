@@ -18,7 +18,8 @@ limitations under the License.
 # Morpheus 24.10.02 (29 Aug 2025)
 
 ## 🛠️ Improvements
-- Update dependencies for Morpheus 24.06 container ([#2217](https://github.com/nv-morpheus/Morpheus/pull/2217)) [@yczhang-nv](https://github.com/yczhang-nv)
+- Forward-merge branch-24.06 into branch-24.10 ([#2300](https://github.com/nv-morpheus/Morpheus/pull/2300))
+- Forward-merge branch-24.06 into branch-24.10 ([#2245](https://github.com/nv-morpheus/Morpheus/pull/2245))
 
 # Morpheus 24.10.01 (22 Nov 2024)
 
