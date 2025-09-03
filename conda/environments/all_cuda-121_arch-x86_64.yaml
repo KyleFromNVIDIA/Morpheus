@@ -19,7 +19,7 @@ dependencies:
 - breathe=4.35.0
 - ccache
 - clangdev=16
-- click>=8
+- click>=8, <8.2
 - cmake=3.27
 - cuda-cudart-dev=12.1
 - cuda-cudart=12.1
@@ -50,6 +50,7 @@ dependencies:
 - grpcio-status=1.59
 - grpcio=1.59
 - gxx_linux-64=11.2
+- httpx>=0.23,<0.28
 - huggingface_hub=0.20.2
 - include-what-you-use=0.20
 - ipython
@@ -69,6 +70,7 @@ dependencies:
 - ninja=1.11
 - nlohmann_json=3.11
 - nodejs=18.*
+- npy-append-array=0.9.16
 - numexpr
 - numpydoc=1.5
 - nvtabular=23.08.00
@@ -120,6 +122,8 @@ dependencies:
   - --extra-index-url https://download.pytorch.org/whl/cu121
   - --find-links https://data.dgl.ai/wheels-test/repo.html
   - --find-links https://data.dgl.ai/wheels/cu121/repo.html
+  - databricks-cli < 0.100
+  - databricks-connect
   - dgl==2.0.0
   - dglgo
   - faiss-gpu==1.7.*

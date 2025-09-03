@@ -14,7 +14,7 @@ dependencies:
 - arxiv=1.4
 - beautifulsoup4=4.12
 - boto3
-- click>=8
+- click>=8, <8.2
 - cudf=24.02
 - cuml=24.02.*
 - cupy
@@ -25,6 +25,7 @@ dependencies:
 - feedparser=6.0
 - grpcio-status=1.59
 - grpcio=1.59
+- httpx>=0.23,<0.28
 - huggingface_hub=0.20.2
 - jsonpatch>=1.33
 - kfp
@@ -34,6 +35,7 @@ dependencies:
 - networkx=2.8.8
 - newspaper3k=0.2
 - nodejs=18.*
+- npy-append-array=0.9.16
 - numexpr
 - numpydoc=1.5
 - nvtabular=23.08.00
@@ -67,6 +69,8 @@ dependencies:
   - --extra-index-url https://download.pytorch.org/whl/cu121
   - --find-links https://data.dgl.ai/wheels-test/repo.html
   - --find-links https://data.dgl.ai/wheels/cu121/repo.html
+  - databricks-cli < 0.100
+  - databricks-connect
   - dgl==2.0.0
   - dglgo
   - faiss-gpu==1.7.*

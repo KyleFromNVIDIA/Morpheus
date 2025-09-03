@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# SPDX-FileCopyrightText: Copyright (c) 2022-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2022-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -125,7 +125,7 @@ def mlflow_uri(tmp_path):
 
     yield uri
 
-    num_runs = len(fluent._active_run_stack)
+    num_runs = len(fluent._active_run_stack.get())
     for _ in range(num_runs):
         mlflow.end_run()
 
@@ -140,7 +140,7 @@ def config_warning_fixture():
 
 
 @pytest.mark.reload_modules(commands)
-@pytest.mark.usefixtures("chdir_tmpdir", "reload_modules")
+@pytest.mark.usefixtures("chdir_tmpdir", "reload_modules", "reset_logging")
 @pytest.mark.use_python
 class TestCLI:
 

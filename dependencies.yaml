@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-FileCopyrightText: Copyright (c) 2023-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,6 +35,7 @@ files:
       - example-dfp-prod
       - example-gnn
       - example-llms
+      - optional_databricks
       - python
       - runtime
       - test_python_morpheus
@@ -154,6 +155,8 @@ files:
       - example-llms
       - python
       - runtime
+      - optional_databricks
+
 
   # Dependencies which are needed to run the model generation scripts in the `models` directory.
   # Includes: none
@@ -306,6 +309,15 @@ dependencies:
         packages:
           - benchmark=1.8.3
 
+  optional_databricks:
+    common:
+      - output_types: [conda]
+        packages:    
+          - pip
+          - pip:
+            - databricks-cli < 0.100
+            - databricks-connect
+
   # Runtime dependencies for Morpheus. Included in nearly all output files so dependencies should
   # be added only if it is needed to run the core Morpheus library.
   # This should be synced with `run` in ci/conda/recipes/morpheus/meta.yaml
@@ -318,7 +330,7 @@ dependencies:
           # Include: cve-mitigation
           - appdirs
           - beautifulsoup4=4.12
-          - click>=8
+          - click>=8, <8.2 # work-around for #2219
           # - cuda-version=12.1 ##
           - cudf=24.02
           - cupy # Version determined from cudf
@@ -333,6 +345,7 @@ dependencies:
           - mlflow>=2.10.0,<3
           - mrc=24.06
           - networkx=2.8.8
+          - npy-append-array=0.9.16 # Avoids a version conflict introduced by 0.9.19 and possibly other versions
           - numpydoc=1.5
           - nvtabular=23.08.00
           - pydantic
@@ -401,6 +414,7 @@ dependencies:
           - &transformers transformers=4.36.2 # newer versions are incompatible with our pinned version of huggingface_hub
           - anyio>=3.7
           - arxiv=1.4
+          - httpx>=0.23,<0.28 # work-around for https://github.com/openai/openai-python/issues/1915
           - huggingface_hub=0.20.2 # work-around for https://github.com/UKPLab/sentence-transformers/issues/1762
           - jsonpatch>=1.33
           - newspaper3k=0.2
