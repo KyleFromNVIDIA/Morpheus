@@ -133,7 +133,7 @@ def config_warning_fixture():
 
 
 @pytest.mark.reload_modules(commands)
-@pytest.mark.usefixtures("chdir_tmpdir", "reload_modules")
+@pytest.mark.usefixtures("chdir_tmpdir", "reload_modules", "reset_logging")
 class TestCLI:
 
     @pytest.mark.parametrize(

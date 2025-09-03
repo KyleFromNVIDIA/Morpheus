@@ -36,6 +36,7 @@ files:
       - example-dfp-prod
       - example-gnn
       - example-llms
+      - optional_databricks
       - python
       - runtime
       - test_python_morpheus
@@ -150,13 +151,14 @@ files:
       arch: [x86_64, aarch64]
     includes:
       - cve-mitigation
-      - databricks_example
       - example-abp-nvsmi
       - example-dfp-prod
       - example-gnn
       - example-llms
       - python
       - runtime
+      - optional_databricks
+
 
   # Dependencies which are needed to run the model generation scripts in the `models` directory.
   # Includes: none
@@ -372,6 +374,15 @@ dependencies:
         packages:
           - benchmark=1.8.3
 
+  optional_databricks:
+    common:
+      - output_types: [conda]
+        packages:    
+          - pip
+          - pip:
+            - databricks-cli < 0.100
+            - databricks-connect
+
   # Runtime dependencies for Morpheus. Included in nearly all output files so dependencies should
   # be added only if it is needed to run the core Morpheus library.
   # This should be synced with `run` in ci/conda/recipes/morpheus/meta.yaml
@@ -485,7 +496,7 @@ dependencies:
     common:
       - output_types: [requirements]
         packages:
-           - &faiss-cpu faiss-cpu
+           - &faiss-cpu faiss-cpu==1.9 # Pinning to 1.9 due to incompatibility with numpy
            - &google-search-results google-search-results==2.4
            - &langchain langchain==0.1.16
            - &langchain-nvidia-ai-endpoints langchain-nvidia-ai-endpoints==0.0.11
@@ -590,15 +601,6 @@ dependencies:
                 - *newspaper3k
                 - *pypdfium2
 
-
-  databricks_example:
-    common:
-      - output_types: [conda]
-        packages:
-          - pip
-          - pip:
-            - databricks-cli < 0.100
-            - databricks-connect
 
   model-training-tuning:
     common:
