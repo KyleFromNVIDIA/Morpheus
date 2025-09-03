@@ -17,6 +17,7 @@ limitations under the License.
 
 # Known Issues
 
+- Numba triggering IndexError on systems with driver version 580+ ([#2305](https://github.com/nv-morpheus/Morpheus/issues/2305))
 - `ransomware_detection` example pipeline occasionally logs a `distributed.comm.core.CommClosedError` error during shutdown ([#2026](https://github.com/nv-morpheus/Morpheus/issues/2026)).
 - Arm64 users need to install CUDA enabled PyTorch by hand ([#2095](https://github.com/nv-morpheus/Morpheus/issues/2095))
 - Performance issues were observed running the `abp_pcap_detection` and `ransomware_detection` pipelines on AArch64 ([#2120](https://github.com/nv-morpheus/Morpheus/issues/2120)) & ([#2124](https://github.com/nv-morpheus/Morpheus/issues/2124)) on Ubuntu 22.04. Arm64 users should consider upgrading to Ubuntu 24.04.

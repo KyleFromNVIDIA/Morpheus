@@ -91,6 +91,11 @@ limitations under the License.
 - Improve `SharedProcessPool` tests performance ([#1950](https://github.com/nv-morpheus/Morpheus/pull/1950)) [@yczhang-nv](https://github.com/yczhang-nv)
 - Add parquet support to write_to_file_stage.py ([#1937](https://github.com/nv-morpheus/Morpheus/pull/1937)) [@yczhang-nv](https://github.com/yczhang-nv)
 
+# Morpheus 24.10.03 (03 Sep 2025)
+
+## 🐛 Bug Fixes
+- Dependency fixes for 24.10 ([#2309](https://github.com/nv-morpheus/Morpheus/pull/2309)) [@dagardner-nv](https://github.com/dagardner-nv)
+
 # Morpheus 24.10.02 (29 Aug 2025)
 
 ## 🛠️ Improvements
@@ -242,6 +247,11 @@ limitations under the License.
 - Install built documentation into release container ([#1806](https://github.com/nv-morpheus/Morpheus/pull/1806)) [@dagardner-nv](https://github.com/dagardner-nv)
 - Removing support for `MultiMessage` from stages ([#1803](https://github.com/nv-morpheus/Morpheus/pull/1803)) [@yczhang-nv](https://github.com/yczhang-nv)
 - Batch incoming DOCA raw packet data ([#1731](https://github.com/nv-morpheus/Morpheus/pull/1731)) [@dagardner-nv](https://github.com/dagardner-nv)
+
+# Morpheus 24.06.03 (03 Sep 2025)
+
+## 🐛 Bug Fixes
+- Misc version and CI fixes ([#2306](https://github.com/nv-morpheus/Morpheus/pull/2306)) [@dagardner-nv](https://github.com/dagardner-nv)
 
 # Morpheus 24.06.02 (29 Aug 2025)
 
