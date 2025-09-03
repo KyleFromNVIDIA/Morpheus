@@ -393,7 +393,6 @@ dependencies:
           - mlflow>=2.10.0,<2.18 # Pin version to avoid breaking change in 2.18 to thread local variable code commit id: 5541888
           - mrc=24.10
           - networkx=2.8.8
-          - npy-append-array=0.9.16 # Avoids a version conflict introduced by 0.9.19 and possibly other versions
           - numpydoc=1.5
           - numba=0.60.0
           - pydantic
@@ -443,7 +442,7 @@ dependencies:
     common:
       - output_types: [requirements]
         packages:
-           - faiss-cpu
+           - &faiss-cpu faiss-cpu==1.9 # Pinning to 1.9 due to incompatibility with numpy
            - google-search-results==2.4
            - langchain==0.1.16
            - langchain-nvidia-ai-endpoints==0.0.11
@@ -515,7 +514,7 @@ dependencies:
           - pip:
             - langchain==0.1.16
             - langchain-nvidia-ai-endpoints==0.0.11
-            - faiss-cpu
+            - *faiss-cpu
             - google-search-results==2.4
             - nemollm==0.3.5
             - sentence-transformers==2.7 # using pip now instead of conda to avoid install of pytorch cpu
