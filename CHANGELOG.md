@@ -15,6 +15,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# Morpheus 24.10.03 (03 Sep 2025)
+
+## 🐛 Bug Fixes
+- Dependency fixes for 24.10 ([#2309](https://github.com/nv-morpheus/Morpheus/pull/2309)) [@dagardner-nv](https://github.com/dagardner-nv)
+
 # Morpheus 24.10.02 (29 Aug 2025)
 
 ## 🛠️ Improvements
