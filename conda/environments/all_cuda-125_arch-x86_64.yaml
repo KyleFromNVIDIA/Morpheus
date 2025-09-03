@@ -51,6 +51,7 @@ dependencies:
 - grpcio-status
 - gtest=1.14
 - gxx=12.1
+- httpx>=0.23,<0.28
 - huggingface_hub=0.20.2
 - include-what-you-use=0.20
 - ipython
@@ -75,6 +76,7 @@ dependencies:
 - ninja=1.11
 - nlohmann_json=3.11
 - nodejs=18.*
+- npy-append-array=0.9.16
 - numba=0.60.0
 - numexpr
 - numpydoc=1.5
@@ -130,6 +132,8 @@ dependencies:
   - --extra-index-url https://download.pytorch.org/whl/cu124
   - --find-links https://data.dgl.ai/wheels-test/repo.html
   - --find-links https://data.dgl.ai/wheels/cu121/repo.html
+  - databricks-cli < 0.100
+  - databricks-connect
   - dgl==2.0.0
   - dglgo
   - faiss-cpu

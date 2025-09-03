@@ -36,6 +36,7 @@ files:
       - example-dfp-prod
       - example-gnn
       - example-llms
+      - optional_databricks
       - python
       - runtime
       - test_python_morpheus
@@ -150,13 +151,14 @@ files:
       arch: [x86_64]
     includes:
       - cve-mitigation
-      - databricks_example
       - example-abp-nvsmi
       - example-dfp-prod
       - example-gnn
       - example-llms
       - python
       - runtime
+      - optional_databricks
+
 
   # Dependencies which are needed to run the model generation scripts in the `models` directory.
   # Includes: none
@@ -355,6 +357,15 @@ dependencies:
         packages:
           - benchmark=1.8.3
 
+  optional_databricks:
+    common:
+      - output_types: [conda]
+        packages:    
+          - pip
+          - pip:
+            - databricks-cli < 0.100
+            - databricks-connect
+
   # Runtime dependencies for Morpheus. Included in nearly all output files so dependencies should
   # be added only if it is needed to run the core Morpheus library.
   # This should be synced with `run` in ci/conda/recipes/morpheus/meta.yaml
@@ -382,6 +393,7 @@ dependencies:
           - mlflow>=2.10.0,<2.18 # Pin version to avoid breaking change in 2.18 to thread local variable code commit id: 5541888
           - mrc=24.10
           - networkx=2.8.8
+          - npy-append-array=0.9.16 # Avoids a version conflict introduced by 0.9.19 and possibly other versions
           - numpydoc=1.5
           - numba=0.60.0
           - pydantic
@@ -488,6 +500,7 @@ dependencies:
           - &transformers transformers=4.36.2 # newer versions are incompatible with our pinned version of huggingface_hub
           - anyio>=3.7
           - arxiv=1.4
+          - httpx>=0.23,<0.28 # work-around for https://github.com/openai/openai-python/issues/1915
           - huggingface_hub=0.20.2 # work-around for https://github.com/UKPLab/sentence-transformers/issues/1762
           - jsonpatch>=1.33
           - newspaper3k=0.2
@@ -506,15 +519,6 @@ dependencies:
             - google-search-results==2.4
             - nemollm==0.3.5
             - sentence-transformers==2.7 # using pip now instead of conda to avoid install of pytorch cpu
-
-  databricks_example:
-    common:
-      - output_types: [conda]
-        packages:
-          - pip
-          - pip:
-            - databricks-cli < 0.100
-            - databricks-connect
 
   model-training-tuning:
     common:
