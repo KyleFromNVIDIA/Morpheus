@@ -30,6 +30,7 @@ dependencies:
 - mrc=25.06
 - networkx=2.8.8
 - numba=0.60
+- numba=0.60.0
 - numpydoc=1.5
 - pip
 - pluggy=1.3

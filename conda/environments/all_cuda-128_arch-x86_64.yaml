@@ -79,6 +79,7 @@ dependencies:
 - nlohmann_json=3.11
 - nodejs=18.*
 - numba=0.60
+- numba=0.60.0
 - numexpr
 - numpydoc=1.5
 - onnx=1.15
@@ -139,7 +140,7 @@ dependencies:
   - databricks-connect
   - dgl
   - exhale>=0.3.7
-  - faiss-cpu
+  - faiss-cpu==1.9
   - google-search-results==2.4
   - gpudb>=7.2.2.3
   - langchain-nvidia-ai-endpoints==0.0.11

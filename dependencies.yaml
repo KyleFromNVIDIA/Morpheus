@@ -38,6 +38,7 @@ files:
       - example-dlp
       - example-gnn
       - example-llms
+      - optional_databricks
       - python
       - runtime
       - test_python_morpheus
@@ -417,6 +418,7 @@ dependencies:
           - networkx=2.8.8
           - numba=0.60 # Pin version to avoid https://github.com/nv-morpheus/Morpheus/issues/2166
           - numpydoc=1.5
+          - numba=0.60.0
           - pydantic
           - python-confluent-kafka=2.6.1
           - python-graphviz
@@ -503,7 +505,7 @@ dependencies:
     common:
       - output_types: [requirements]
         packages:
-           - &faiss-cpu faiss-cpu
+           - &faiss-cpu faiss-cpu==1.9 # Pinning to 1.9 due to incompatibility with numpy
            - &google-search-results google-search-results==2.4
            - *gpudb
            - &langchain langchain==0.1.16
