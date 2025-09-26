@@ -18,6 +18,7 @@ import re
 import typing
 
 import datacompy
+import numpy as np
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -80,6 +81,8 @@ def filter_df(df: pd.DataFrame,
 
         if replace_idx.startswith("_index_"):
             filtered_df.index.name = str(filtered_df.index.name).replace("_index_", "", 1)
+
+    filtered_df = filtered_df.fillna(value=np.nan)
 
     return filtered_df
 
