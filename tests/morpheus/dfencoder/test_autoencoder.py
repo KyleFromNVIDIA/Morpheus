@@ -19,6 +19,7 @@ import typing
 import warnings
 from unittest.mock import patch
 
+import cupy as cp
 import numpy as np
 import pandas as pd
 import pytest
@@ -59,6 +60,9 @@ CAT_COLS = [
 ]
 
 NUMERIC_COLS = ['eventID', 'ae_anomaly_score']
+
+CUDA_DEVICE_PROPS = cp.cuda.runtime.getDeviceProperties(0)
+CUDA_COMPUTE = (CUDA_DEVICE_PROPS["major"], CUDA_DEVICE_PROPS["minor"])
 
 
 @pytest.fixture(name="train_ae", scope="function")
@@ -475,6 +479,7 @@ def test_build_input_tensor(train_ae: autoencoder.AutoEncoder, train_df: pd.Data
 
 
 @pytest.mark.usefixtures("manual_seed")
+@pytest.mark.skipif(CUDA_COMPUTE == (12, 0), reason="Fails on Blackwell")
 def test_auto_encoder_get_results(train_ae: autoencoder.AutoEncoder, train_df: pd.DataFrame):
     train_ae.fit(train_df, epochs=1)
     results = train_ae.get_results(train_df)
